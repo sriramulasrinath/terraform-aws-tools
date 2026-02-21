@@ -1,10 +1,13 @@
 #!/bin/bash
 
-yum install fontconfig java-17-openjdk -y
+#yum install fontconfig java-17-openjdk -y
+dnf install java-21-openjdk-headless -y
+dnf install fontconfig dejavu-sans-fonts -y
 #installing terraform on server
 yum install -y yum-utils
 yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 yum -y install terraform
+
 #installing nodejs 
 dnf module disable nodejs -y
 dnf module enable nodejs:20 -y

@@ -5,3 +5,4 @@ Pipeline stage view
 AnsiColor
 Pipeline Utility Steps --> to read the all files like json yaml
 nexus artifact uploader
+Rebuild

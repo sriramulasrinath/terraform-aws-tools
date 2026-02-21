@@ -4,8 +4,8 @@ module "jenkins" {
   name = "jenkins.tf"
 
   instance_type          = "t3.small"
-  vpc_security_group_ids = ["sg-00d8e884e38dae954"]
-  subnet_id              = "subnet-09e5fbac6203f2585"
+  vpc_security_group_ids = ["sg-0b52cba635db55c54"]
+  subnet_id              = "subnet-00d1bf02a873408bb"
   ami                    = data.aws_ami.ami_info.id
   user_data = file("jenkins.sh")
 
@@ -19,8 +19,8 @@ module "jenkins_agent" {
 
   name = "jenkins-agent"
   instance_type          = "t3.small"
-  vpc_security_group_ids = ["sg-00d8e884e38dae954"]
-  subnet_id              = "subnet-09e5fbac6203f2585"
+  vpc_security_group_ids = ["sg-0b52cba635db55c54"]
+  subnet_id              = "subnet-00d1bf02a873408bb"
   ami                    = data.aws_ami.ami_info.id
   user_data = file("jenkins-agent.sh")
 
@@ -29,7 +29,7 @@ module "jenkins_agent" {
     }
 }
 
-
+/*
 resource "aws_key_pair" "tools" {
   key_name = "tools"
   #public_key =  ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF3/FINvjYpjY9kIAHD9dNsURR4KTBpqdCdmYJjXLSBU
@@ -42,8 +42,8 @@ module "nexus" {
   name = "nexus"
 
   instance_type          = "t3.medium"
-  vpc_security_group_ids = ["sg-00d8e884e38dae954"]
-  subnet_id              = "subnet-09e5fbac6203f2585"
+  vpc_security_group_ids = ["sg-0b52cba635db55c54"]
+  subnet_id              = "subnet-00d1bf02a873408bb"
   key_name = aws_key_pair.tools.key_name
   ami                    = data.aws_ami.nexus_ami_info.id
   root_block_device = [
@@ -89,3 +89,4 @@ module "records" {
     }
   ]
 }
+*/
